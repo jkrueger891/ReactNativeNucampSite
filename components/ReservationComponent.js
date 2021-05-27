@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Text,
   View,
@@ -8,8 +8,8 @@ import {
   Switch,
   Button,
   Modal,
-} from "react-native";
-import DateTimePicker from "@react-native-community/datetimepicker";
+} from 'react-native';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 class Reservation extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class Reservation extends Component {
   }
 
   static navigationOptions = {
-    title: "Reserve Campsite",
+    title: 'Reserve Campsite',
   };
 
   toggleModal() {
@@ -70,7 +70,7 @@ class Reservation extends Component {
           <Switch
             style={styles.formItem}
             value={this.state.hikeIn}
-            trackColor={{ true: "#5637DD", false: null }}
+            trackColor={{ true: '#5637DD', false: null }}
             onValueChange={(value) => this.setState({ hikeIn: value })}
           />
         </View>
@@ -80,7 +80,7 @@ class Reservation extends Component {
             onPress={() =>
               this.setState({ showCalendar: !this.state.showCalendar })
             }
-            title={this.state.date.toLocaleDateString("en-US")}
+            title={this.state.date.toLocaleDateString('en-US')}
             color="#5637DD"
             accessibilityLabel="Tap me to select a reservation date"
           />
@@ -88,7 +88,7 @@ class Reservation extends Component {
         {this.state.showCalendar && (
           <DateTimePicker
             value={this.state.date}
-            mode={"date"}
+            mode={'date'}
             display="default"
             onChange={(event, selectedDate) => {
               selectedDate &&
@@ -106,7 +106,7 @@ class Reservation extends Component {
           />
         </View>
         <Modal
-          animationType={"slide"}
+          animationType={'slide'}
           transparent={false}
           visible={this.state.showModal}
           onRequestClose={() => this.toggleModal()}
@@ -117,10 +117,10 @@ class Reservation extends Component {
               Number of Campers: {this.state.campers}
             </Text>
             <Text style={styles.modalText}>
-              Hike-In?: {this.state.hikeIn ? "Yes" : "No"}
+              Hike-In?: {this.state.hikeIn ? 'Yes' : 'No'}
             </Text>
             <Text style={styles.modalText}>
-              Date: {this.state.date.toLocaleDateString("en-US")}
+              Date: {this.state.date.toLocaleDateString('en-US')}
             </Text>
             <Button
               onPress={() => {
@@ -139,10 +139,10 @@ class Reservation extends Component {
 
 const styles = StyleSheet.create({
   formRow: {
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     flex: 1,
-    flexDirection: "row",
+    flexDirection: 'row',
     margin: 20,
   },
   formLabel: {
@@ -153,15 +153,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   modal: {
-    justifyContent: "center",
+    justifyContent: 'center',
     margin: 20,
   },
   modalTitle: {
     fontSize: 24,
-    fontWeight: "bold",
-    backgroundColor: "#5637DD",
-    textAlign: "center",
-    color: "#fff",
+    fontWeight: 'bold',
+    backgroundColor: '#5637DD',
+    textAlign: 'center',
+    color: '#fff',
     marginBottom: 20,
   },
   modalText: {
